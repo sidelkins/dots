@@ -6,6 +6,10 @@ The standard for naming the files is `docker-compose.yml` and then running said 
 
 Using a custom filename makes it easier to utilize the same `.env` file across multiple services.
 
+### Start a service or stack
+
+`sudo docker compose --env-file .env -f [FILENAME].yml up`
+
 ### *arr Suite
 `sudo docker compose -p arr --env-file .env -f arr.yml up`
 For these you may have to exit and start from Portainer
