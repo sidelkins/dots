@@ -8,8 +8,11 @@ Using a custom filename makes it easier to utilize the same `.env` file across m
 
 ### Start a service or stack
 
-`sudo docker compose --env-file .env -f [FILENAME].yml up`
+`sudo docker compose --env-file .env -f [FILENAME].yml up -d`
 
 ### *arr Suite
-`sudo docker compose -p arr --env-file .env -f arr.yml up`
-For these you may have to exit and start from Portainer
+`sudo docker compose -p arr --env-file .env -f arr.yml up -d`
+
+### Code Server
+Customized Dockerfile from Linuxserver.io to include Node.
+From code-server directory, run `sudo ./Script.sh` (may need `chmod +x`)
