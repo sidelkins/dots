@@ -1,0 +1,43 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/service-widgets
+
+- resources:
+    label: System
+    expanded: false
+    cpu: true
+    uptime: true
+    memory: true
+- resources:
+    label: ssd
+    expanded: true
+    disk: /
+- resources:
+    label: media
+    expanded: true
+    disk: /mnt/media
+- resources:
+    label: cloud
+    expanded: true
+    disk: /mnt/cloud
+- resources:
+    label: docker
+    expanded: true
+    disk: /mnt/docker
+- resources:
+    label: logs
+    expanded: true
+    disk: /mnt/logs
+- resources:
+    label: backups
+    expanded: true
+    disk: /mnt/backups
+- openweathermap:
+    label: <city> # optional
+    latitude: <lat>
+    longitude: <long>
+    units: imperial # or metric
+    apiKey: <key>
+    cache: 5 # Time in minutes to cache API responses, to stay within limits
+    format: # optional, Intl.NumberFormat options
+      maximumFractionDigits: 1

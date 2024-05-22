@@ -1,0 +1,26 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/settings
+title: kraken
+startUrl: <starturl>
+
+cardBlur: sm
+theme: dark
+background: https://i.imgur.com/hOzzkCY.jpeg
+backgroundOpacity: 0.2
+
+layout:
+  System:
+  Media:
+    icon: mdi-play-circle-outline
+    style: row
+    columns: 3
+  Utilities:
+    icon: mdi-tools
+    style: row
+  Files:
+    style: row
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey

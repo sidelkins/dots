@@ -1,0 +1,172 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+- System:
+    - Glances:
+        icon: glances.png
+        href: http://kraken:61208
+# Widgets incompatible for some reason
+#     - Info:
+#         widget:
+#             type: glances
+#             url: http://10.0.0.69:61208/api/3
+#             metric: info
+#             chart: false
+#     - CPU:
+#         widget:
+#             type: glances
+#             url: http://10.0.0.69:61208
+#             metric: cpu
+#             chart: false
+#     - RAM:
+#         widget:
+#             type: glances
+#             url: http://10.0.0.69:61208
+#             metric: memory
+#             chart: false
+#     - Network:
+#         widget:
+#             type: glances
+#             url: http://10.0.0.69:61208
+#             metric: network:enp3s0
+#             chart: false
+- Media:
+    - Plex:
+        icon: plex.png
+        href: http://kraken:32400/
+        description: Media suite
+        siteMonitor: http://10.0.0.69:32400
+        statusStyle: "dot"
+        widget:
+          type: plex
+          url: http://10.0.0.69:32400
+          fields: ["streams","movies","tv"]
+          key: <key>
+    - Overseer:
+        icon: overseerr.png
+        href: http://kraken:5055
+        description: Media request portal
+        siteMonitor: http://10.0.0.69:5055
+        statusStyle: "dot"
+        widget:
+          type: overseerr
+          url: http://10.0.0.69:5055
+          key: <key>
+    - Radarr:
+        icon: radarr.png
+        href: http://kraken:7878/
+        description: Movie management
+        siteMonitor: http://10.0.0.69:7878/
+        statusStyle: "dot"
+        widget:
+          type: radarr
+          url: http://10.0.0.69:7878
+          key: <key>
+    - Sonarr:
+        icon: sonarr.png
+        href: http://kraken:8989/
+        description: Series management
+        siteMonitor: http://10.0.0.69:8989/
+        statusStyle: "dot"
+        widget:
+          type: sonarr
+          url: http://10.0.0.69:8989
+          key: <key>
+    - Prowlarr:
+        icon: prowlarr.png
+        href: http://kraken:9696/
+        description: Series management
+        siteMonitor: http://10.0.0.69:9696/
+        statusStyle: "dot"
+        widget:
+          type: prowlarr
+          url: http://10.0.0.69:9696
+          key: <key>
+- Utilities:
+    - Code Server:
+        icon: code.png
+        href: https://kraken:8443
+        siteMonitor: http://10.0.0.69:8443
+        statusStyle: "dot"
+    - Mealie:
+        icon: mealie.png
+        href: https://kraken
+        siteMonitor: http://10.0.0.69
+        statusStyle: "dot"
+        widget:
+            type: mealie
+            url: http://mealie-frontend.host.or.ip
+            key: <key>
+- Services:
+    - Portainer:
+        icon: portainer.png
+        href: https://kraken:9443/
+        siteMonitor: http://10.0.0.69:9443
+        statusStyle: "dot"
+        widget:
+            type: portainer
+            url: https://10.0.0.69:9443
+            env: 2
+            key: <key>
+    - Gluetun:
+        icon: gluetun.png
+        href: http://kraken:8001/
+        description: VPN Client
+        siteMonitor: http://10.0.0.69:8001
+        statusStyle: "dot"
+        widget:
+            type: gluetun
+            url: http://10.0.0.69:8001
+    - qBittorrent:
+        icon: qbittorrent.png
+        href: http://kraken:8112/
+        description: Torrent Client
+        siteMonitor: http://10.0.0.69:8112
+        statusStyle: "dot"
+        widget:
+          type: qbittorrent
+          url: http://10.0.0.69:8112
+          username: sid
+          password: <password>
+    - Scrutiny:
+        icon: scrutiny.png
+        href: http://kraken:8081/
+        description: Drive Monitoring
+        siteMonitor: http://10.0.0.69:8081
+        statusStyle: "dot"
+        widget:
+          type: scrutiny
+          url: http://10.0.0.69:8081
+    - Speedtest:
+        icon: speedtest-tracker.png
+        href: http://kraken:8181
+        widget:
+            type: speedtest
+            url: http://10.0.0.69:8181
+            bitrateprecision: 0
+    - Syncthing:
+        icon: syncthing.png
+        href: http://kraken:8384/
+        description: 
+        siteMonitor: http://10.0.0.69:8384
+        statusStyle: "dot"
+    - Adguard Home:
+       icon: adguard.png
+       href: http://kraken
+       description: DNS Ad-Blocker
+       siteMonitor: http://10.0.0.69
+       statusStyle: "dot"
+    - Clouflare Tunnels:
+        icon: cloudflare.png
+        href: https://one.dash.cloudflare.com/<accountid>
+        widget:
+            type: cloudflared
+            accountid: <accountid> # from zero trust dashboard url e.g. https://one.dash.cloudflare.com/<accountid>/home/quick-start
+            tunnelid: <tunnelid> # found in tunnels dashboard under the tunnel name
+            key: <key> # api token with `Account.Cloudflare Tunnel:Read` https://dash.cloudflare.com/profile/api-tokens
+    - Minecraft:
+      icon: minecraft.png
+      description: 1.20.4
+      widget:
+        type: minecraft
+        url: udp://10.0.0.69:35565
